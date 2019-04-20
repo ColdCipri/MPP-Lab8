@@ -34,12 +34,12 @@ public class Main
         Validator<Grades> gradesValidator = new GradeValidator();
         Validator<AssignProblem> assignProblemValidator = new AssignmentValidator();
         
-        /* in memory Repo */
+        /* in memory Repo 
         Repository<Long, Student> studentRepo = new InMemoryRepository(studentValidator);
         Repository<Long, Problem> problemRepo = new InMemoryRepository(problemValidator);
         Repository<Long, Grades> gradesRepo = new InMemoryRepository(gradesValidator);
         Repository<Long, AssignProblem> assignRepo = new InMemoryRepository(assignProblemValidator);
-		
+		*/
 		
         /* file Repo 
         Repository<Long, Student> studentRepo = new StudentFileRepository(studentValidator, "data/students.txt");
@@ -48,30 +48,31 @@ public class Main
         Repository<Long, AssignProblem> assignRepo = new AssignFileRepository(assignProblemValidator, "data/assignProblem.txt");
         */
         
-        /* XML Repo
+        /* XML Repo 
         Repository<Long, Student> studentRepo = new StudentXmlRepository(studentValidator, "data/students.xml");
         Repository<Long, Problem> problemRepo = new ProblemXmlRepository(problemValidator, "data/problems.xml");
         Repository<Long, Grades> gradesRepo = new GradeXmlRepository(gradesValidator, "data/grades.xml");
-        Repository<Long, AssignProblem> assignRepo = new AssignProblemXmlRepository(assignProblemValidator, "data/assignProblem.xml"); */
+        Repository<Long, AssignProblem> assignRepo = new AssignProblemXmlRepository(assignProblemValidator, "data/assignProblem.xml"); 
+        */
         
-        /* DataBase Repo 
+        /* DataBase Repo */
         Repository<Long, Student> studentRepo = new StudentDbRepository(studentValidator);
         Repository<Long, Problem> problemRepo = new ProblemsDbRepository(problemValidator);
         Repository<Long, Grades> gradesRepo = new GradesDbRepository(gradesValidator);
         Repository<Long, AssignProblem> assignRepo = new AssignProblemDbRepository(assignProblemValidator);
-         */
+        
         
         StudentService studentService = new StudentService(studentRepo);
         ProblemService problemService = new ProblemService(problemRepo);
         GradeService gradeService = new GradeService(gradesRepo);
         AssignmentService assignmentService = new AssignmentService(assignRepo);
 
-        //BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        //int connectAs = Integer.parseInt(bf.readLine());
 
         Console console = new Console(studentService, problemService, gradeService, assignmentService);
         console.runConsole();
 
         
+        //BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        //int connectAs = Integer.parseInt(bf.readLine());
     }
 }

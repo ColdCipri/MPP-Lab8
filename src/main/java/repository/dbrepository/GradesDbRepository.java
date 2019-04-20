@@ -62,7 +62,7 @@ public class GradesDbRepository implements Repository<Long, Grades>{
 				Long uniqueId = resultSet.getLong("id");
 				int problemId = resultSet.getInt("problemId");
 				int studentId = resultSet.getInt("studentId");
-				int grade = resultSet.getInt("\"grade\"");
+				int grade = resultSet.getInt("grade");
 				
 				Grades grades = new Grades(problemId, studentId, grade);
 				grades.setId(uniqueId);

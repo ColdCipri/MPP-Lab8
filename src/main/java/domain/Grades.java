@@ -61,10 +61,6 @@ public class Grades extends BaseEntity {
 
 	    @Override
 	    public String toString() {
-	        return "Grade{" +
-	                "problemId ='" + problemId + '\'' +
-	                ", studentId ='" + studentId + '\'' +
-	                ", grade =" + grade +
-	                "} " + super.toString();
+	        return "Grade { ProblemId = " + problemId + " | StudentId = " + studentId + " | Grade =" + grade + " }" + super.toString();
 	    }
 	}

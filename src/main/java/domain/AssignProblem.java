@@ -74,9 +74,6 @@ public class AssignProblem extends BaseEntity {
 
 	    @Override
 	    public String toString() {
-	        return "AssignedProblem{" +
-	                "Problem ='" + problemId + '\'' +
-	                ", Student ='" + studentId + '\'' +
-	                "} " + super.toString();
+	        return "AssignedProblem { Problem = " + problemId + " | Student = " + studentId + " }" + super.toString();
 	    }
 	}

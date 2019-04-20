@@ -90,7 +90,7 @@ public class Student extends BaseEntity{
 
 	@Override
 	public String toString() {
-		return "Student {serialNumber = " + serialNumber + " | name = " + name + "| group = " + group + "}" + super.toString();
+		return "Student { SerialNumber = " + serialNumber + " | Name = " + name + " | Group = " + group + "}" + super.toString();
 	}
 	
 	

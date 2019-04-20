@@ -54,9 +54,6 @@ public class Discipline extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Discipline{" +
-                "title='" + title + '\'' +
-                ", credits='" + credits + '\'' +
-                "} " + super.toString();
+        return "Discipline { Title = " + title + " | Credits='" + credits + "| }" + super.toString();
     }
 }

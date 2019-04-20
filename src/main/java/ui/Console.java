@@ -5,6 +5,7 @@ import Service.ProblemService;
 import Service.StudentService;
 import Service.GradeService;
 import domain.AssignProblem;
+import domain.Discipline;
 import domain.Grades;
 import domain.Problem;
 import domain.Student;
@@ -48,12 +49,14 @@ public class Console {
         System.out.println("3. Add Problem");
         System.out.println("4. Print problems");
         System.out.println("5. Add Grade");
-        System.out.println("6. Get the problems with the given description");
-        System.out.println("7. Filter students by name");
-        System.out.println("8. Filter problems by name");
-        System.out.println("9. Get the number of problems by difficulty");
-        System.out.println("10. Get most assigned problems");
-        System.out.println("11. Assign Problems To Students");
+        System.out.println("6. Print Grade");
+        System.out.println("7. Get most assigned problems");
+        System.out.println("8. Assign Problems To Students");
+        System.out.println("9. Print Assigned Problems");
+        //System.out.println("6. Get the problems with the given description");
+        //System.out.println("7. Filter students by name");
+        //System.out.println("8. Filter problems by name");
+        //System.out.println("9. Get the number of problems by difficulty");
     }
 
     public void runConsole()
@@ -81,9 +84,18 @@ public class Console {
                     addGrades();
                     break;
                 case 6:
-                    getProblemsByDescription();
+                	printAllGrades();
                     break;
                 case 7:
+                    GetMostAssignedProblems();
+                    break;
+                case 8:
+                    addAssignments();
+                    break;
+                case 9:
+                    printAllAss();
+                    break;
+                    /*case 7:
                     filterStudents();
                     break;
                 case 8:
@@ -91,13 +103,7 @@ public class Console {
                     break;
                 case 9:
                     GetProblemsByDifficulty();
-                    break;
-                case 10:
-                    GetMostAssignedProblems();
-                    break;
-                case 11:
-                    addAssignments();
-                    break;
+                    break;*/
             }
         }
         //filterStudents();
@@ -189,6 +195,18 @@ public class Console {
         Set<Problem> problems = problemService.getAllProblems();
         problems.stream().forEach(System.out::println);
     }
+    
+    private void printAllGrades()
+    {
+        Set<Grades> grades = gradeService.getAllGrades();
+        grades.stream().forEach(System.out::println);
+    }
+    
+    private void printAllAss()
+    {
+        Set<AssignProblem> ass = asService.getAllStudents();
+        ass.stream().forEach(System.out::println);
+    }
 
     private void addStudents() {
         while (true) {
@@ -267,6 +285,7 @@ public class Console {
             }
         }
     }
+    
 
     private Student readStudent() {
         System.out.println("Read student {id,serialNumber, name, group}");

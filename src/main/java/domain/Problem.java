@@ -68,4 +68,9 @@ public class Problem extends BaseEntity {
 
 		return problemName.equals(prob.problemName);
 	}
+	
+	@Override
+    public String toString() {
+        return "Problem {" + "problemDescription = " + problemDescription + " | problemName = " + problemName + " | problemDifficulty = " + problemDifficulty + " } " + super.toString();
+    }
 }
