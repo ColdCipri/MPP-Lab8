@@ -27,7 +27,7 @@ import java.io.InputStreamReader;
 public class Main
 {
     @SuppressWarnings("all")
-	public static void main(String[] argv) throws IOException
+	public static void main(String[] argv)// throws IOException
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Problem> problemValidator = new ProblemValidator();
@@ -66,8 +66,8 @@ public class Main
         GradeService gradeService = new GradeService(gradesRepo);
         AssignmentService assignmentService = new AssignmentService(assignRepo);
 
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        int connectAs = Integer.parseInt(bf.readLine());
+        //BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        //int connectAs = Integer.parseInt(bf.readLine());
 
         Console console = new Console(studentService, problemService, gradeService, assignmentService);
         console.runConsole();
